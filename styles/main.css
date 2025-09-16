@@ -25,3 +25,8 @@ html {
 body {
     height: 100dvh;
 }
+
+button {
+    width: fit-content;
+    height: fit-content;
+}

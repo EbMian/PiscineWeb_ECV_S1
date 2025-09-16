@@ -1,0 +1,24 @@
+@import url(./main.css);
+
+.product-details {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+}
+
+.add-to-cart-btn {
+    padding-inline: 2rem;
+    padding-block: .5rem;
+}
+
+.cart-controls {
+    display: flex;
+    justify-content: space-evenly;
+
+    & button {
+        padding-top: .25rem;
+        padding-inline: 1rem;
+    }
+}
