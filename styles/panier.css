@@ -1,0 +1,17 @@
+td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.spaceAround {
+    padding: 50px;
+}
+
+.textAlignedEnd {
+    display: flex;
+    align-items: end;
+}
