@@ -8,7 +8,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }
- 
+
 *,
 *::before,
 *::after {
@@ -16,7 +16,7 @@
     margin: 0;
     padding: 0;
 }
- 
+
 html {
     font-family: system-ui, sans-serif;
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -31,4 +31,3 @@ button {
     width: fit-content;
     height: fit-content;
 }
- 
