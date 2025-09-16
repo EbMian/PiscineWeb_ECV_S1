@@ -21,7 +21,13 @@ html {
     font-family: system-ui, sans-serif;
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
 }
-
+ 
 body {
     height: 100dvh;
+    /* overflow-y: scroll; */
+}
+ 
+button {
+    width: fit-content;
+    height: fit-content;
 }
