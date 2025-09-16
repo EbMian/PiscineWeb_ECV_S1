@@ -1,5 +1,20 @@
 @import url(./main.css);
 
+main {
+    max-width: 80ch;
+    margin: auto;
+
+    &>* {
+        margin-bottom: 1rem;
+    }
+}
+
+.product-preview {
+    background-color: var(--lighter-green);
+    aspect-ratio: 3/2;
+
+}
+
 .product-details {
     width: 100%;
     height: fit-content;

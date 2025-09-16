@@ -6,12 +6,76 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Mug</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../styles/produit.css'>
 </head>
 
 <body>
+    <!-- header -->
 
+    <!-- fil d'ariane -->
+
+    <main>
+        <!-- prévisualisation -->
+        <div class="product-preview">
+            <canvas id="preview-canvas"></canvas>
+        </div>
+        <!-- details -->
+        <section class="product-details">
+            <h2>Produit</h2>
+            <button class="add-to-cart-btn">Ajouter au Panier</button>
+            <p class="product-price">XX,XX €</p>
+            <div class="cart-controls">
+                <button>-</button>
+                <p class="number-to-add">1</p>
+                <button>+</button>
+            </div>
+        </section>
+        <!-- paramètres de personnalisation -->
+        <section class="product-settings">
+            <h3>Personnalisation :</h3>
+            <input type="file" name="custom-img-input" id="custom-img-input">
+            <div class="size-settings">
+                <label for="size-setting">Taille :</label>
+                <input type="radio" name="size-setting" id="small">
+                <input type="radio" name="size-setting" id="medium">
+                <input type="radio" name="size-setting" id="large">
+            </div>
+            <div class="color-settings">
+                <label for="color-setting">Couleur :</label>
+                <input type="radio" name="color-setting" id="Blanc">
+                <input type="radio" name="color-setting" id="Noir">
+                <input type="radio" name="color-setting" id="Creme">
+                <input type="radio" name="color-setting" id="Feuille">
+            </div>
+            <div class="finish-settings">
+                <label for="finish-setting">Taille :</label>
+                <input type="radio" name="finish-setting" id="matte">
+                <input type="radio" name="finish-setting" id="glossy">
+            </div>
+        </section>
+        <!-- description -->
+        <section class="product-description">
+            <h3>Description :</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iure possimus obcaecati sapiente aperiam
+                nobis exercitationem explicabo tempore minus error ad consequuntur ut ab, incidunt eum quibusdam fugit.
+                Fugiat, minima.
+                Sequi omnis tempore deserunt eos voluptatem velit rerum aperiam tenetur expedita reiciendis eveniet
+                nihil eius modi dolores maxime quaerat commodi, repellendus obcaecati quia dignissimos excepturi
+                pariatur cupiditate! Ipsa, at dolorum.
+            </p>
+        </section>
+        <!-- avis -->
+        <section class="product-reviews">
+            <h3>Avis :</h3>
+        </section>
+        <!-- suggestions -->
+        <section class="product-suggestions">
+            <h3>Suggestions :</h3>
+        </section>
+    </main>
+
+    <!-- footer -->
 </body>
 
 </html>
