@@ -8,7 +8,13 @@ table {
 }
 
 .spaceAround {
-    padding: 50px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .spaceAround {
+        padding: 50px;
+    }
 }
 
 .textAlignedEnd {

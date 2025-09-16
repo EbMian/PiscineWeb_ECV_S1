@@ -7,10 +7,78 @@
     <title>Accueil</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../styles/accueil.css'>
 </head>
 
 <body>
+    <main>
+        <section class="spaceAround">
+            <div class="pieceOfSpeach1">
+                <div class="speachText">
+                    <h3>Vous souhaitez offrir ?</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Porro esse doloremque beatae quas vel, accusamus assumenda ad 
+                        velit voluptatem architecto sint sit voluptas, officiis blanditiis laborum. 
+                        Dignissimos nihil nisi minus?
+                    </p>
+                </div>
+                <br>
+                <div class="speachImg">
+                    <img src="../assets/images/offrir-un-mug.jpg" alt="Mug dans de la ficelle" style="max-width: 300px;">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pieceOfSpeach2">
+                <div class="speachText">
+                    <h3>Vous souhaitez achetez pour vous même ?</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Porro esse doloremque beatae quas vel, accusamus assumenda ad 
+                        velit voluptatem architecto sint sit voluptas, officiis blanditiis laborum. 
+                        Dignissimos nihil nisi minus?
+                    </p>
+                </div>
+                <div class="speachImg">
+                    <img src="../assets/images/mug-personnel.jpg" alt="Mug dans de la ficelle" style="max-width: 300px;">
+                </div>
+            </div>
 
+        </section>
+        <section class="spaceAround">
+            <form id="contactForm" action="" method="">
+                <h3>Formulaire de contact</h3>
+                <br>
+                <div class="formNames">
+                    <div class="formLastName">
+                        <label for="name">Nom</label>
+                        <br>
+                        <input type="text" id="name" name="user_name"/>
+                    </div>
+                    <div class="formFirstName">
+                        <label for="mail">Prénom</label>
+                        <br>
+                        <input type="email" id="mail" name="user_mail" />
+                    </div>
+                </div>
+                <div>
+                    <label for="subject">Sujet</label>
+                    <br>
+                    <input type="text" id="subject" name="user_subject" />
+                </div>
+                <div>
+                    <label for="msg">Message</label>
+                    <br>
+                    <textarea id="msg" name="user_message"></textarea>
+                </div>
+                <div>
+                    <button>Envoyer</button>
+                </div>
+            </form>
+        </section>
+        
+    </main>
 </body>
 
 </html>

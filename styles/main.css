@@ -35,3 +35,7 @@ button {
 .bold {
     font-weight: bold;
 }
+
+.flex {
+    display: flex;
+}
