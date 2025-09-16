@@ -33,24 +33,27 @@
         <!-- paramètres de personnalisation -->
         <section class="product-settings">
             <h3>Personnalisation :</h3>
+            <!-- <label for="size-setting">Importer une image :</label> -->
             <input type="file" name="custom-img-input" id="custom-img-input">
-            <div class="size-settings">
-                <label for="size-setting">Taille :</label>
-                <input type="radio" name="size-setting" id="small">
-                <input type="radio" name="size-setting" id="medium">
-                <input type="radio" name="size-setting" id="large">
-            </div>
-            <div class="color-settings">
-                <label for="color-setting">Couleur :</label>
-                <input type="radio" name="color-setting" id="Blanc">
-                <input type="radio" name="color-setting" id="Noir">
-                <input type="radio" name="color-setting" id="Creme">
-                <input type="radio" name="color-setting" id="Feuille">
-            </div>
-            <div class="finish-settings">
-                <label for="finish-setting">Taille :</label>
-                <input type="radio" name="finish-setting" id="matte">
-                <input type="radio" name="finish-setting" id="glossy">
+            <div class="wrapper">
+                <div class="product-setting" id="size-settings">
+                    <label for="size-setting">Taille :</label>
+                    <input type="radio" name="size-setting" id="small">
+                    <input type="radio" name="size-setting" id="medium">
+                    <input type="radio" name="size-setting" id="large">
+                </div>
+                <div class="product-setting" id="color-settings">
+                    <label for="color-setting">Couleur :</label>
+                    <input type="radio" name="color-setting" id="blanc">
+                    <input type="radio" name="color-setting" id="noir">
+                    <input type="radio" name="color-setting" id="creme">
+                    <input type="radio" name="color-setting" id="feuille">
+                </div>
+                <div class="product-setting" id="finish-settings">
+                    <label for="finish-setting">Finition :</label>
+                    <input type="radio" name="finish-setting" id="matte">
+                    <input type="radio" name="finish-setting" id="glossy">
+                </div>
             </div>
         </section>
         <!-- description -->

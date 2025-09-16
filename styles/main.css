@@ -10,67 +10,18 @@
 
     --base-green: #006241;
     --lighter-green: oklch(from var(--base-green) clamp(0, l + 0.22, 1) calc(c*0.9) h);
-    --darker-green: oklch(from var(--base-green) clamp(0, l - 0.22, 1) calc(c*0.92) h);
+    --darker-green: oklch(from var(--base-green) clamp(0, l - 0.22, 1) calc(c*0.9) h);
     --green-complement: oklch(from var(--base-green) l calc(c*0.85) calc(h - 180));
 
     --base-neutral: #CCE0D8;
     --lighter-neutral: oklch(from var(--base-neutral) clamp(0, l + 0.22, 1) calc(c*0.9) h);
-    --darker-neutral: oklch(from var(--base-neutral) clamp(0, l - 0.22, 1) calc(c*0.92) h);
+    --darker-neutral: oklch(from var(--base-neutral) clamp(0, l - 0.22, 1) calc(c*0.9) h);
     --neutral-complement: oklch(from var(--base-neutral) l calc(c*0.85) calc(h - 180));
 
-    --base-accent: #CCE0D8;
+    --base-accent: #CC9664;
     --lighter-accent: oklch(from var(--base-accent) clamp(0, l + 0.22, 1) calc(c*0.9) h);
-    --darker-accent: oklch(from var(--base-accent) clamp(0, l - 0.22, 1) calc(c*0.92) h);
+    --darker-accent: oklch(from var(--base-accent) clamp(0, l - 0.22, 1) calc(c*0.9) h);
     --accent-complement: oklch(from var(--base-accent) l calc(c*0.85) calc(h - 180));
-}
-
-/* dev */
-#box-1 {
-    background-color: var(--base-green);
-    height: 4rem;
-    width: 4rem;
-}
-
-#box-2 {
-    background-color: var(--lighter-green);
-    height: 4rem;
-    width: 4rem;
-}
-
-#box-3 {
-    background-color: var(--darker-green);
-    height: 4rem;
-    width: 4rem;
-}
-
-#box-4 {
-    background-color: var(--green-complement);
-    width: 4rem;
-    height: 4rem;
-}
-
-#box-5 {
-    background-color: var(--base-neutral);
-    width: 4rem;
-    height: 4rem;
-}
-
-#box-6 {
-    background-color: var(--darker-neutral);
-    width: 4rem;
-    height: 4rem;
-}
-
-#box-7 {
-    background-color: var(--lighter-neutral);
-    width: 4rem;
-    height: 4rem;
-}
-
-#box-8 {
-    background-color: var(--neutral-complement);
-    width: 4rem;
-    height: 4rem;
 }
 
 *,
@@ -94,4 +45,6 @@ body {
 button {
     width: fit-content;
     height: fit-content;
+    border: none;
+    border-radius: 8px;
 }
