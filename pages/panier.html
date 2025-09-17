@@ -8,68 +8,39 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/panier.css'>
+    <script type="module" src="../JS/main.js"></script>
 </head>
 
 <body>
     <main>
         <section class="spaceAround">
-            <table>
-                <tr>
-                    <td>
+            <template id="articleTemplate">
+                <div class="flex">
+                    <div>
                         <div class="flex">
                             <div>
                                 <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
                             </div>
                             <div>
-                                <p>Nom du produit</p>
-                                <p>
-                                    <span>Quantité :</span>
-                                    <span>5<span>
-                                </p>
+                                <ul>
+                                    <li class="nom"></li>
+                                    <li>
+                                        <span>Quantité :</span>
+                                        <span class="quantite"></span>
+                                    </li>
+                                    <li class="option"></li>
+                                </ul>
                             </div>
                         </div>
-                    </td>
-                    <td>XX €</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex">
-                            <div>
-                                <img src="../assets/images/mug-rouge.png" alt="Mug rouge" style="width:100px">
-                            </div>
-                            <div>
-                                <p>Nom du produit</p>
-                                <p>
-                                    <span>Quantité :</span>
-                                    <span>5<span>
-                                </p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>XX €</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex">
-                            <div>
-                                <img src="../assets/images/mug-orange.png" alt="Mug orange" style="width: 100px;">
-                            </div>
-                            <div>
-                                <p>Nom du produit</p>
-                                <p>
-                                    <span>Quantité :</span>
-                                    <span>5<span>
-                                </p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>XX €</td>
-                </tr>
-            </table>
-            <div>
-                <span>Total :</span>
-                <span>XX €</span>
-            </div>
+                    </div>
+                    <div><p class="prix"></p></div>
+                </div>
+                <div>
+                    <span>Total :</span>
+                    <span>XX €</span>
+                </div>
+            </template>
+            <div id="liste"></div>
             <div style="display:flex; justify-content: end;">
                 <button>Valider</button>
             </div>
