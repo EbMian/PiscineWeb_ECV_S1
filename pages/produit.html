@@ -7,6 +7,7 @@
     <title>Mug</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/produit.css'>
+    <script type="module" src="../JS/main.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
         <!-- details -->
         <section class="product-details">
             <h1>Produit</h1>
-            <p>XX,XX €</p>
+            <p id="price">XX,XX €</p>
             <div class="cart-controls">
                 <button class="add-to-cart-btn">Ajouter au Panier</button>
                 <button>+</button>
@@ -36,31 +37,31 @@
             <!-- <label for="size-setting">Importer une image :</label> -->
             <input type="file" name="custom-img-input" id="custom-img-input">
             <div class="product-setting" id="size-settings">
-                <label for="size-setting">Taille :</label>
-                <label for="size-setting">S</label>
-                <input type="radio" name="size-setting" id="small">
-                <label for="size-setting">M</label>
-                <input type="radio" name="size-setting" id="medium">
-                <label for="size-setting">L</label>
-                <input type="radio" name="size-setting" id="large">
+                <h3>Taille :</h3>
+                <label for="small">S</label>
+                <input type="radio" name="size-setting" id="small" data-value="small" checked="true">
+                <label for="medium">M</label>
+                <input type="radio" name="size-setting" id="medium" data-value="medium">
+                <label for="large">L</label>
+                <input type="radio" name="size-setting" id="large" data-value="large">
             </div>
             <div class="product-setting" id="color-settings">
-                <label for="color-setting">Couleur :</label>
-                <label for="color-setting">Blanc</label>
-                <input type="radio" name="color-setting" id="blanc">
-                <label for="color-setting">Noir</label>
-                <input type="radio" name="color-setting" id="noir">
-                <label for="color-setting">Creme</label>
-                <input type="radio" name="color-setting" id="creme">
-                <label for="color-setting">Feuille</label>
-                <input type="radio" name="color-setting" id="feuille">
+                <h3>Couleur :</h3>
+                <label for="blanc">Blanc</label>
+                <input type="radio" name="color-setting" id="blanc" data-value="white" checked="true">
+                <label for="noir">Noir</label>
+                <input type="radio" name="color-setting" id="noir" data-value="black">
+                <label for="creme">Creme</label>
+                <input type="radio" name="color-setting" id="creme" data-value="beige">
+                <label for="feuille">Feuille</label>
+                <input type="radio" name="color-setting" id="feuille" data-value="green">
             </div>
             <div class="product-setting" id="finish-settings">
-                <label for="finish-setting">Finition :</label>
-                <label for="size-setting">Matte</label>
-                <input type="radio" name="finish-setting" id="matte">
-                <label for="size-setting">Brillante</label>
-                <input type="radio" name="finish-setting" id="glossy">
+                <h3>Finition :</h3>
+                <label for="matte">Matte</label>
+                <input type="radio" name="finish-setting" id="matte" data-value="matte" checked="true">
+                <label for="glossy">Brillante</label>
+                <input type="radio" name="finish-setting" id="glossy" data-value="glossy">
             </div>
         </section>
         <!-- description -->
