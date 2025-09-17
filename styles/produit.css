@@ -1,0 +1,207 @@
+@import url(./main.css);
+
+:root {
+
+    --base-black: #00171F;
+    --lighter-black: oklch(from var(--base-black) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-black: oklch(from var(--base-black) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+
+    --base-white: oklch(from var(--base-black) clamp(0, l + 0.88, 1) c h);
+    --lighter-white: oklch(from var(--base-white) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-white: oklch(from var(--base-white) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+}
+
+main {
+    max-width: 50rem;
+    margin-inline: auto;
+
+    & section {
+        margin: 1rem 0;
+    }
+}
+
+.product-preview {
+    background-color: var(--base-neutral);
+    aspect-ratio: 3/2;
+    border-radius: 8px;
+    /* max-height: 360px; */
+}
+
+.product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: large;
+
+    & h1 {
+        margin-right: auto;
+    }
+}
+
+.cart-controls {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-self: end;
+    align-items: center;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    border: 1px solid var(--base-green);
+    font-size: large;
+
+    & button {
+        border-radius: 0;
+        padding: 1rem 2rem;
+        height: 100%;
+        background: none;
+        font-size: large;
+    }
+
+    & .add-to-cart-btn {
+        background: var(--base-green);
+        color: white;
+    }
+}
+
+.product-settings {
+    & input[type=file] {
+        width: 100%;
+        border: 1px solid var(--base-green);
+        border-radius: 8px;
+
+        &::file-selector-button {
+            height: 2rem;
+            padding-inline: 1rem;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            color: var(--base-green);
+        }
+
+
+        &:hover {
+            border: 1px solid var(--lighter-green);
+            cursor: pointer;
+
+            &::file-selector-button {
+                color: var(--lighter-green);
+            }
+        }
+
+        &:focus {
+            border: 1px solid var(--darker-green);
+        }
+    }
+
+    &>* {
+        margin-bottom: .5rem;
+    }
+}
+
+.product-setting {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    gap: .5rem;
+
+    input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 2px solid #aaa;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        transition: border-color 150ms ease-in-out, box-shadow 200ms ease-in-out;
+    }
+
+    /* Checked state - inner dot */
+    input[type="radio"]::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: #007bff;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 150ms ease-in-out;
+    }
+
+    /* Show dot when checked */
+    input[type="radio"]:checked::before {
+        transform: scale(1);
+    }
+
+    /* Hover effect */
+    input[type="radio"]:hover {
+        border-color: #0056b3;
+    }
+
+    /* Focus outline for accessibility */
+    input[type="radio"]:focus {
+        outline: 1px solid #0056b3;
+        outline-offset: 1px;
+    }
+}
+
+/* #blanc {
+        background-color: var(--base-white);
+
+        &:hover {
+            border-color: var(--lighter-white);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px var(--darker-white);
+        }
+
+        &:checked {
+            border-color: var(--darker-white);
+        }
+
+        & :checked::after {
+            background: white;
+        }
+    }
+
+    #noir {
+        background-color: var(--base-black);
+
+        &:hover {
+            border-color: var(--lighter-black);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px var(--darker-black);
+        }
+
+        &:checked {
+            border-color: var(--darker-black);
+        }
+
+        & :checked::after {
+            background: white;
+        }
+    }
+
+} */
+
+.wrapper {
+    display: flex;
+    gap: 3rem;
+}
+
+.product-description {
+    max-width: 80ch;
+}

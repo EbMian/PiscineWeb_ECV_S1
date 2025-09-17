@@ -7,6 +7,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    --base-green: #006241;
+    --lighter-green: oklch(from var(--base-green) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-green: oklch(from var(--base-green) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+    --green-complement: oklch(from var(--base-green) l calc(c*0.85) calc(h - 180));
+
+    --base-neutral: #CCE0D8;
+    --lighter-neutral: oklch(from var(--base-neutral) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-neutral: oklch(from var(--base-neutral) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+    --neutral-complement: oklch(from var(--base-neutral) l calc(c*0.85) calc(h - 180));
+
+    --base-accent: #CC9664;
+    --lighter-accent: oklch(from var(--base-accent) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-accent: oklch(from var(--base-accent) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+    --accent-complement: oklch(from var(--base-accent) l calc(c*0.85) calc(h - 180));
 }
 
 *,
@@ -21,16 +36,19 @@ html {
     font-family: system-ui, sans-serif;
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
 }
- 
+
 body {
-    height: 100dvh;
+    padding: 4rem;
+    min-height: 100dvh;
     /* overflow-y: scroll; */
 }
- 
+
 button {
     width: fit-content;
     height: fit-content;
-}
+    border: none;
+    border-radius: 8px;
+    padding: .5rem 1rem;
 
 .bold {
     font-weight: bold;
