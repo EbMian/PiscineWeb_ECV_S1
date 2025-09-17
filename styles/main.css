@@ -31,3 +31,11 @@ button {
     width: fit-content;
     height: fit-content;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+}

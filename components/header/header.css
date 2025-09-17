@@ -24,3 +24,7 @@
   margin-right: auto;
   height: fit-content;
 }
+
+.spacingHeader {
+  padding: 10px;
+}
