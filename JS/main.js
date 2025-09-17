@@ -54,7 +54,7 @@ const getPrice = (isGift) => {
 
 function updatePriceElement() {
     const priceElement = document.querySelector('#price');
-    priceElement.innerText = getPrice(false);
+    priceElement.innerText = `${getPrice(false)},00 €`;
 }
 
 updateSelectedSize();
