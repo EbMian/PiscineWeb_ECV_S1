@@ -1,0 +1,64 @@
+@media screen and (min-width: 500px) {
+    .formNames {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .formLastName {
+        width: 47%;
+    }
+
+    .formFirstName {
+        width: 47%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .pieceOfSpeach1 {
+        display: flex;
+    }
+
+    .pieceOfSpeach2 {
+        display: flex;
+    }
+
+    .pieceOfSpeach2 .speachText {
+        order: 2;
+    }
+}
+
+#contactForm {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#contactForm input, #contactForm textarea, #contactForm button {
+    width: 100%;
+}
+
+.spaceAround {
+    padding: 10px;
+}
+
+@media screen and (min-width: 400px) {
+    .spaceAround {
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .spaceAround {
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .spaceAround {
+        padding:0;
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
