@@ -1,39 +1,37 @@
-const cart = {}
-const product = { taille, finition, couleur, prix }
-const pro = {}
-const option = {}
-const productList = {}
+import { options } from './Data.js';
 
-function calculatePrice(size, finition, couleur, basePrice) {
+const shoppingListe = document.querySelector('#list');
+let articlesList = JSON.parse(localStorage.getItem('cart')) || [];
+console.log("article", articlesList);
 
-}
+const prixTotal = () => {
+    let total = 0;
+    articlesList.forEach(article => total += article.price * article.quantity);
+    return total;
+};
 
-// * Avoir le prix de chaque option quelque part
-// * Préparer un template pour l'affichage des items dans le panier 
+const renderArticle = ({ color, finish, price, quantity, size }) => 
+  `<div class="flex spaceBetween">
+        <div class="flex">
+            <div>
+                <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
+            </div>
+            <div>
+                <p style="font-weight: bold;">Produit</p>
+                <li>Couleur : ${color}</li>
+                <li>Finition : ${finish}</li>
+                <li>Taille : ${size}</li>
+                <li>Quantité : ${quantity}</li>
+            </div>
+        </div>
+        <div><p>Prix : ${price} €</p></div>
+    </div>
+    <br>`
+;
 
-// * Ecouter et récupérer les valeurs des options dans le formulaire 
-// couleur, taille, finition
-// * Au clic sur "Valider" ou "Ajouter au panier" (page produit), calculer le prix associé à chaque item selon les options et la quantité
-// prixCouleur, prixTaille, prixFinition, quantité, prixItem
-// * Au clique sur le le bouton panier : Adaptez le template pour l'affichage des produits
+const html = articlesList.map(article => renderArticle(article)).join('');
 
+document.querySelector('#list').innerHTML = html;
 
-const shoppingListe = document.getElementById('liste');
-console.log(shoppingListe);
+document.querySelector('#total').innerText = prixTotal() + " €";
 
-const articleTemplate = document.getElementById('liste-item');
-console.log(articleTemplate);
-
-const produits = ["café", "thé", "mug", "chocolat"]
-
-produits.forEach(produit => {
-
-    const clone = document.importNode(articleTemplate.content, true);
-
-    clone.querySelector('.nom').textContent = produit;
-    clone.querySelector('.quantite').textContent = produit;
-    clone.querySelector('.nom').options = produit;
-    clone.querySelector('.prix').textContent = produit;
-
-    shoppingListe.appendChild(clone)
-})

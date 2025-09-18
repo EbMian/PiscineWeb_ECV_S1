@@ -8,53 +8,23 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/panier.css'>
-    <script type="module" src="../JS/main.js"></script>
+    <script type="module" src="../JS/panier.js"></script> 
+    <!-- <script type="module" src="../JS/main.js"></script> -->
 </head>
 
 <body>
     <main>
         <section class="spaceAround">
-            <template id="articleTemplate">
-                <div class="flex">
-                    <div>
-                        <div class="flex">
-                            <div>
-                                <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
-                            </div>
-                            <div>
-                                <ul>
-                                    <li class="name"></li>
-                                    
-                                    <li>
-                                        <span>Couleur :</span>
-                                        <span class="color"></span>
-                                    </li>
-                                    <li>
-                                        <span>Taille :</span>
-                                        <span class="size"></span>
-                                    </li>
-                                    <li>
-                                        <span>Finition :</span>
-                                        <span class="finish"></span>
-                                    </li>
-                                    <li>
-                                        <span>Quantité :</span>
-                                        <span class="quantity"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div><p class="prix"></p></div>
-                </div>
-                <div>
-                    <span>Total :</span>
-                    <span>XX €</span>
-                </div>
-            </template>
-            <div id="list"></div>
+            <ul id="list"></ul>
             <div style="display:flex; justify-content: end;">
-                <button>Valider</button>
+                <p style="font-weight: bold">
+                    <span>Total :</span>
+                    <span id="total"></span>
+                </p>
+            </div>
+            <br>
+            <div style="display:flex; justify-content: end;">
+                <button>Payer</button>
             </div>
         </section>
     </main>
