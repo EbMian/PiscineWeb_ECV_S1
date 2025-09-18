@@ -12,6 +12,7 @@
         width: 47%;
     }
 }
+
 @media screen and (max-width: 767px) {
     .speachImg {
         display: flex;
@@ -39,7 +40,9 @@
     margin-left: auto;
 }
 
-#contactForm input, #contactForm textarea, #contactForm button {
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
     width: 100%;
 }
 
@@ -61,7 +64,7 @@
 
 @media screen and (min-width: 1080px) {
     .spaceAround {
-        padding:0;
+        padding: 0;
         margin-left: 150px;
         margin-right: 150px;
         margin-top: 50px;

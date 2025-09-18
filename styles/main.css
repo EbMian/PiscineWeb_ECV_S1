@@ -38,9 +38,10 @@ html {
 }
 
 body {
-    padding: 4rem;
     min-height: 100dvh;
-    /* overflow-y: scroll; */
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 button {
@@ -50,6 +51,25 @@ button {
     border-radius: 8px;
     padding: .5rem 1rem;
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    padding: 10px 15px;
+    gap: 1rem;
+    background-color: var(--base-green);
+    color: var(--base-white);
+    align-items: center;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+
+    & .cart-icon {
+        margin-left: auto;
+    }
 }
 
 .bold {
@@ -62,4 +82,47 @@ button {
 
 .spaceBetween {
     justify-content: space-between;
+}
+
+.footerLink {
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .footerLink {
+        display: block;
+    }
+
+    .footerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: bottom;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .footerLink {
+        display: inline;
+        margin-right: 3%;
+    }
+
+    .footerContainer {
+        justify-content: space-between;
+    }
+
+    .footerLinksContainer {
+        width: 70%;
+    }
+
+    .footerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+footer {
+    width: 95%;
+    padding: 0 15px 0 15px;
+    padding-bottom: 20px;
 }

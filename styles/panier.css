@@ -1,11 +1,6 @@
-td {
-    border: 1px solid black;
-}
-
-table {
-    width: 100%;
-    max-width: 1200px;
-}
+@import url(./main.css);
+@import url(./header.css);
+@import url(./footer.css);
 
 .spaceAround {
     padding: 10px;
