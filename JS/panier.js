@@ -1,6 +1,7 @@
 import { options } from './Data.js';
 
-const shoppingListe = document.querySelector('#list');
+const listElement = document.querySelector('#list');
+const totalPriceElement = document.querySelector('#total');
 let articlesList = JSON.parse(localStorage.getItem('cart')) || [];
 console.log("article", articlesList);
 
@@ -10,28 +11,24 @@ const prixTotal = () => {
     return total;
 };
 
-const renderArticle = ({ color, finish, price, quantity, size }) => 
-  `<div class="flex spaceBetween">
-        <div class="flex">
-            <div>
-                <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
-            </div>
-            <div>
-                <p style="font-weight: bold;">Produit</p>
+const renderArticle = ({ color, finish, price, quantity, size }) =>
+    `<div class="flex" style="gap: .5rem; align-items: center; width: 100%">
+        <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
+        <div>
+            <h2 style="font-weight: bold; margin-bottom:.5rem">Mug x${quantity}</h2>
+            <ul class="flex" style="gap: 2rem; margin-left: .5rem;">
                 <li>Couleur : ${color}</li>
                 <li>Finition : ${finish}</li>
                 <li>Taille : ${size}</li>
-                <li>Quantité : ${quantity}</li>
-            </div>
+            </ul>
         </div>
-        <div><p>Prix : ${price} €</p></div>
+        <h3 style="margin-left: auto;margin-top: .5rem">Prix : ${price} €</h3>
     </div>
-    <br>`
-;
+    <hr style="width: 100%; margin: 1rem 0">`
+    ;
 
 const html = articlesList.map(article => renderArticle(article)).join('');
 
-document.querySelector('#list').innerHTML = html;
-
-document.querySelector('#total').innerText = prixTotal() + " €";
+listElement.innerHTML = html;
+totalPriceElement.innerText = prixTotal() + " €";
 
