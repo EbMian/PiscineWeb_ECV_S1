@@ -8,25 +8,31 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/panier.css'>
-    <script type="module" src="../JS/panier.js"></script> 
-    <!-- <script type="module" src="../JS/main.js"></script> -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="../JS/panier.js"></script>
 </head>
 
 <body>
     <main>
         <section class="spaceAround">
             <ul id="list"></ul>
-            <div style="display:flex; justify-content: end;">
-                <p style="font-weight: bold">
-                    <span>Total :</span>
-                    <span id="total"></span>
-                </p>
+            <div style="display:flex; justify-content: end; gap: 1rem; align-items: flex-end; margin-top: 3rem;">
+                <h2>Total :</h2>
+                <h2 id="total"></h2>
             </div>
             <br>
             <div style="display:flex; justify-content: end;">
-                <button>Payer</button>
+                <button style="font-size: larger; padding: 1rem 4rem;">Payer</button>
             </div>
         </section>
     </main>
 </body>
+
 </html>
