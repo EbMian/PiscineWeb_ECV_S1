@@ -8,30 +8,26 @@ const sizeSelectors = document.querySelectorAll('input[name="size-setting"]');
 const colorSelectors = document.querySelectorAll('input[name="color-setting"]');
 const finishSelectors = document.querySelectorAll('input[name="finish-setting"]');
 
-function updateSelectedSize() {
-    selectedSize = document.querySelector('input[name="size-setting"]:checked').getAttribute('data-value');
-    updatePriceElement()
-}
 
-function updateSelectedColor() {
-    selectedColor = document.querySelector('input[name="color-setting"]:checked').getAttribute('data-value');
-    updatePriceElement()
-}
+const updateSelectedSize = () => {
+    selectedSize = document.querySelector('input[name="size-setting"]:checked')?.dataset.value;
+    updatePriceElement();
+};
 
-function updateSelectedFinish() {
-    selectedFinish = document.querySelector('input[name="finish-setting"]:checked').getAttribute('data-value');
-    updatePriceElement()
-}
+const updateSelectedColor = () => {
+    selectedColor = document.querySelector('input[name="color-setting"]:checked')?.dataset.value;
+    updatePriceElement();
+};
 
-sizeSelectors.forEach(selector => {
-    selector.addEventListener('change', () => updateSelectedSize())
-})
-colorSelectors.forEach(selector => {
-    selector.addEventListener('change', () => updateSelectedColor())
-})
-finishSelectors.forEach(selector => {
-    selector.addEventListener('change', () => updateSelectedFinish())
-})
+const updateSelectedFinish = () => {
+    selectedFinish = document.querySelector('input[name="finish-setting"]:checked')?.dataset.value;
+    updatePriceElement();
+};
+
+
+sizeSelectors.forEach(selector => selector.addEventListener('change', updateSelectedSize));
+colorSelectors.forEach(selector => selector.addEventListener('change', updateSelectedColor));
+finishSelectors.forEach(selector => selector.addEventListener('change', updateSelectedFinish));
 
 
 //* Adaptation du prix
@@ -45,17 +41,19 @@ const options = {
     gift: 2,
 };
 
+
 const getPrice = (isGift) => {
     let p = basePrice + options.size[selectedSize] + options.colors[selectedColor] + options.finish[selectedFinish];
-    // if (customImage) p + options.image;
-    if (isGift) p + options.gift;
+    // if (customImage) p += options.image;
+    if (isGift) p += options.gift;
     return p;
-}
+};
 
-function updatePriceElement() {
+
+const updatePriceElement = () => {
     const priceElement = document.querySelector('#price');
     priceElement.innerText = `${getPrice(false)},00 €`;
-}
+};
 
 updateSelectedSize();
 updateSelectedColor();
