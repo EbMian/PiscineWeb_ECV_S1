@@ -1,3 +1,6 @@
+import { basePrice, options } from './Data.js';
+
+
 //* Gestion de la sélection des paramètrees de customization
 
 let selectedSize = sessionStorage.getItem('selectedSize') || undefined;
@@ -31,20 +34,7 @@ sizeSelectors.forEach(selector => selector.addEventListener('change', updateSele
 colorSelectors.forEach(selector => selector.addEventListener('change', updateSelectedColor));
 finishSelectors.forEach(selector => selector.addEventListener('change', updateSelectedFinish));
 
-
-//* Adaptation du prix
-
-const basePrice = 5;
-const options = {
-    size: { small: 0, medium: 2, large: 3 },
-    colors: { white: 0, black: 1, beige: 2, green: 2 },
-    finish: { matte: 0, glossy: 2 },
-    image: 3,
-    gift: 2,
-};
-
-
-const getPrice = (isGift) => {
+export const getPrice = (isGift) => {
     let p = basePrice + options.size[selectedSize] + options.colors[selectedColor] + options.finish[selectedFinish];
     // if (customImage) p += options.image;
     if (isGift) p += options.gift;
@@ -76,39 +66,3 @@ if (selectedFinish) {
 updateSelectedSize();
 updateSelectedColor();
 updateSelectedFinish();
-
-let quantity = 1;
-const quantityElement = document.querySelector('#quantity');
-const increaseQuantityButton = document.querySelector('#increase-quantity-btn');
-const decreaseQuantityButton = document.querySelector('#decrease-quantity-btn');
-
-increaseQuantityButton.addEventListener('click', () => {
-    quantity++;
-    quantityElement.innerText = quantity;
-});
-
-decreaseQuantityButton.addEventListener('click', () => {
-    if (quantity > 1) {
-        quantity--;
-        quantityElement.innerText = quantity;
-    }
-});
-
-
-const addToCartButton = document.querySelector('#add-to-cart-btn');
-addToCartButton.addEventListener('click', () => {
-    if (!selectedSize || !selectedColor || !selectedFinish) {
-        alert('Please select size, color, and finish before adding to cart.');
-        return;
-    }
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.push({
-        size: selectedSize,
-        color: selectedColor,
-        finish: selectedFinish,
-        price: getPrice(false),
-        quantity: quantity,
-    });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Item added to cart!');
-});

@@ -18,15 +18,6 @@ function calculatePrice(size, finition, couleur, basePrice) {
 // * Au clique sur le le bouton panier : Adaptez le template pour l'affichage des produits
 
 
-
-"options" = [
-    { colors: [{ red: 2 }, { orange: 2 }, { white: 1 }, { black: 1 }, { green: 2 }] },
-    { size: [{ small: 1 }, { medium: 2 }, { large: 3 }] },
-    { finition: [{ mate: 1 }, { shiny: 3 }] },
-    { graphics: [{ image: 3 }] },
-    { giftOrNot: [{ gift: 2 }, { notGift: 1 }] }
-];
-
 const shoppingListe = document.getElementById('liste');
 console.log(shoppingListe);
 
