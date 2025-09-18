@@ -7,3 +7,10 @@ export const options = {
     image: 3,
     gift: 2,
 };
+
+export const previewOptions = {
+    size: { small: .8, medium: 1, large: 1.2 },
+    colors: { white: '#FFFFFF', black: '#2F4F4F', beige: '#d4a77c', green: '#006241' },
+    finish: { matte: 1, glossy: 0 },
+    image: 3,
+}
