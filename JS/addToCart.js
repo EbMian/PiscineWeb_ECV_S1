@@ -1,42 +1,64 @@
+
 import { getPrice } from './selector.js';
 
-let selectedSize = sessionStorage.getItem('selectedSize') || undefined;
-let selectedColor = sessionStorage.getItem('selectedColor') || undefined;
-let selectedFinish = sessionStorage.getItem('selectedFinish') || undefined;
+// Utilitaires de stockage
+const Storage = {
+    get(key) {
+        return sessionStorage.getItem(key) || undefined;
+    },
+    set(key, value) {
+        sessionStorage.setItem(key, value ?? '');
+    }
+};
 
+// Gestion du panier
+const Cart = {
+    get() {
+        return JSON.parse(localStorage.getItem('cart') || '[]');
+    },
+    add(item) {
+        const cart = Cart.get();
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+};
+
+// Gestion de la quantité
 let quantity = 1;
-
 const quantityElement = document.querySelector('#quantity');
-const increaseQuantityButton = document.querySelector('#increase-quantity-btn');
-const decreaseQuantityButton = document.querySelector('#decrease-quantity-btn');
 
-increaseQuantityButton.addEventListener('click', () => {
+function updateQuantityDisplay() {
+    if (quantityElement) quantityElement.innerText = quantity;
+}
+
+export function increaseQuantity() {
     quantity++;
-    quantityElement.innerText = quantity;
-});
+    updateQuantityDisplay();
+}
 
-decreaseQuantityButton.addEventListener('click', () => {
+export function decreaseQuantity() {
     if (quantity > 1) {
         quantity--;
-        quantityElement.innerText = quantity;
+        updateQuantityDisplay();
     }
-});
+}
 
-
+// Ajout au panier
 const addToCartButton = document.querySelector('#add-to-cart-btn');
-addToCartButton.addEventListener('click', () => {
+addToCartButton?.addEventListener('click', () => {
+    const selectedSize = Storage.get('selectedSize');
+    const selectedColor = Storage.get('selectedColor');
+    const selectedFinish = Storage.get('selectedFinish');
     if (!selectedSize || !selectedColor || !selectedFinish) {
-        alert('Please select size, color, and finish before adding to cart.');
+        alert('Veuillez sélectionner la taille, la couleur et la finition avant d\'ajouter au panier.');
         return;
     }
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.push({
+    Cart.add({
         size: selectedSize,
         color: selectedColor,
         finish: selectedFinish,
         price: getPrice(false),
         quantity: quantity,
     });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Item added to cart!');
+    alert('Article ajouté au panier !');
 });
