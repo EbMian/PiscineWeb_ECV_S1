@@ -27,8 +27,8 @@ function calculatePrice (size, finition, couleur, basePrice) {
     {giftOrNot: [{gift: 2}, {notGift: 1}]}
 ];
 
-const shoppingListe = document.getElementById('liste');
-console.log(shoppingListe);
+const shoppingList = document.getElementById('liste');
+console.log(shoppingList);
  
 const articleTemplate = document.getElementById('liste-item');
 console.log(articleTemplate);
@@ -39,10 +39,12 @@ produits.forEach(produit => {
  
     const clone = document.importNode(articleTemplate.content, true);
  
-    clone.querySelector('.nom').textContent = produit;
-    clone.querySelector('.quantite').textContent = produit;
-    clone.querySelector('.nom').options = produit;
+    clone.querySelector('.name').textContent = "Produit";
+    clone.querySelector('.color').textContent = selectedColor;
+    clone.querySelector('.size').textContent = selectedSize;
+    clone.querySelector('.finish').textContent = selectedFinish;
+    clone.querySelector('.quantite').textContent = 1;
     clone.querySelector('.prix').textContent = produit;
  
-    shoppingListe.appendChild(clone)
+    shoppingList.appendChild(clone);
 })
