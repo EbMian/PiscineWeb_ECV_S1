@@ -7,6 +7,14 @@
     <title>Mug</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/produit.css'>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+            }
+        }
+    </script>
     <script type="module" src="../JS/selector.js"></script>
 </head>
 
@@ -17,8 +25,9 @@
 
     <main>
         <!-- prévisualisation -->
-        <div class="product-preview">
-            <canvas id="preview-canvas"></canvas>
+        <div id="canvasContainer">
+            <script type="module" src="../JS/components/Previewer/Previewer.js"></script>
+            <canvas id="c"></canvas>
         </div>
         <!-- details -->
         <section class="product-details">
