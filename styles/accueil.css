@@ -12,6 +12,12 @@
         width: 47%;
     }
 }
+@media screen and (max-width: 767px) {
+    .speachImg {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 @media screen and (min-width: 768px) {
     .pieceOfSpeach1 {
@@ -60,5 +66,21 @@
         margin-right: 150px;
         margin-top: 50px;
         margin-bottom: 50px;
+    }
+}
+
+.grid12Cols {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+.columnSpan3 {
+    grid-column: span 3;
+}
+
+@media (max-width: 576px) {
+    .columnSpan6 {
+        grid-column: span 6;
     }
 }
