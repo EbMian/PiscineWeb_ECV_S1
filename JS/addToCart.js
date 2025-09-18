@@ -57,7 +57,7 @@ addToCartButton?.addEventListener('click', () => {
         size: selectedSize,
         color: selectedColor,
         finish: selectedFinish,
-        price: getPrice(false),
+        price: getPrice(),
         quantity: quantity,
     });
     alert('Article ajouté au panier !');

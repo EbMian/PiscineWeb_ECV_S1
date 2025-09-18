@@ -66,10 +66,9 @@ function restoreSelections() {
     }
 }
 
-export function getPrice(isGift) {
+export function getPrice() {
     let p = basePrice + options.size[selectedSize] + options.colors[selectedColor] + options.finish[selectedFinish];
     // if (customImage) p += options.image;
-    if (isGift) p += options.gift;
     return p;
 }
 
