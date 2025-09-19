@@ -48,8 +48,13 @@ html {
 body {
     min-height: 100dvh;
     margin: 0;
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 button {
@@ -62,18 +67,25 @@ button {
 }
 
 header {
-    display: flex;
-    padding: 10px 15px;
-    gap: 1rem;
-    background-color: var(--base-green);
-    color: var(--base-white);
-    align-items: center;
-    margin-bottom: 1rem;
     position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
-    width: 100vw;
+
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+
+    background-color: var(--base-green);
+    color: var(--base-white);
+
+    & a {
+        display: flex;
+    }
 
     & .cart-icon {
         margin-left: auto;
@@ -136,9 +148,8 @@ canvas {
 }
 
 footer {
-    width: 95%;
-    padding: 0 15px 0 15px;
-    padding-bottom: 20px;
+    width: 100%;
+    padding: 1rem 2rem;
 }
 
 .center {

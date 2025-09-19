@@ -1,3 +1,5 @@
+@import url('./main.css');
+
 @media screen and (min-width: 500px) {
     .formNames {
         display: flex;
@@ -89,10 +91,10 @@
 }
 
 .ctaHome {
-    font-size:large;
-    font-weight: bold; 
-    padding:20px; 
-    margin: 100px 0px 100px 0px; 
+    font-size: large;
+    font-weight: bold;
+    padding: 1rem 4rem;
+    margin: 1rem auto;
     background-color: #006241;
     color: white;
 }

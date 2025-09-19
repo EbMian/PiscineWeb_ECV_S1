@@ -1,4 +1,6 @@
-@import url(./main.css);
+@import url('./main.css');
+@import url('./suggestion.css');
+@import url('./advice.css');
 
 main {
     max-width: 50rem;
