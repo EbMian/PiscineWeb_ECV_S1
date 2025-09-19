@@ -199,6 +199,17 @@ main {
     display: flex; 
     overflow: auto; 
     margin: 40px 0 40px 0;
+    position: relative;
+    /*&:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 7vw;
+        width: 15px;
+        z-index: 1;
+        height: 15PX;
+        background-image: linear-gradient(to right, transparent, rgba(0,255,255,1) );
+    }*/
 }
 
 .review {
