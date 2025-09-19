@@ -1,12 +1,16 @@
 @import url('./main.css');
-@import url('./advice.css');
+/* @import url('./advice.css'); */
 
 main {
     max-width: 50rem;
     margin-inline: auto;
 
     & section {
-        margin: 1rem 0;
+        margin: 2rem 0;
+    }
+
+    & h2 {
+        margin-bottom: 1rem !important;
     }
 }
 
@@ -187,18 +191,29 @@ main {
 
 } */
 
-.wrapper {
-    display: flex;
-    gap: 3rem;
-}
-
 .product-description {
     max-width: 80ch;
 }
 
+.review {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &>img {
+        grid-row: 1/3;
+    }
+
+    & p {
+        grid-column: 1/3;
+    }
+}
+
+
 .mugList img {
     width: 30vw;
-    height: 30vw; 
+    height: 30vw;
     object-fit: cover;
 }
 
