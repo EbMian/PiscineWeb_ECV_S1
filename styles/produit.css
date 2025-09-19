@@ -196,3 +196,9 @@ main {
 .product-description {
     max-width: 80ch;
 }
+
+.mugList img {
+    width: 30vw;
+    height: 30vw; 
+    object-fit: cover;
+}
