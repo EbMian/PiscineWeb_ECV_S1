@@ -87,3 +87,12 @@
         grid-column: span 6;
     }
 }
+
+.ctaHome {
+    font-size:large;
+    font-weight: bold; 
+    padding:20px; 
+    margin: 100px 0px 100px 0px; 
+    background-color: #006241;
+    color: white;
+}
