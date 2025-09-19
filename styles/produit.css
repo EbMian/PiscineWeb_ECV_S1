@@ -1,17 +1,4 @@
 @import url(./main.css);
-@import url(./header.css);
-@import url(./footer.css);
-
-:root {
-
-    --base-black: #00171F;
-    --lighter-black: oklch(from var(--base-black) clamp(0, l + 0.22, 1) calc(c*0.9) h);
-    --darker-black: oklch(from var(--base-black) clamp(0, l - 0.22, 1) calc(c*0.9) h);
-
-    --base-white: oklch(from var(--base-black) clamp(0, l + 0.88, 1) c h);
-    --lighter-white: oklch(from var(--base-white) clamp(0, l + 0.22, 1) calc(c*0.9) h);
-    --darker-white: oklch(from var(--base-white) clamp(0, l - 0.22, 1) calc(c*0.9) h);
-}
 
 main {
     max-width: 50rem;

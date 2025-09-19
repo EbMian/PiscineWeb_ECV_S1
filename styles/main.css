@@ -22,6 +22,14 @@
     --lighter-accent: oklch(from var(--base-accent) clamp(0, l + 0.22, 1) calc(c*0.9) h);
     --darker-accent: oklch(from var(--base-accent) clamp(0, l - 0.22, 1) calc(c*0.9) h);
     --accent-complement: oklch(from var(--base-accent) l calc(c*0.85) calc(h - 180));
+
+    --base-black: #00171F;
+    --lighter-black: oklch(from var(--base-black) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-black: oklch(from var(--base-black) clamp(0, l - 0.22, 1) calc(c*0.9) h);
+
+    --base-white: oklch(from var(--base-black) clamp(0, l + 0.88, 1) c h);
+    --lighter-white: oklch(from var(--base-white) clamp(0, l + 0.22, 1) calc(c*0.9) h);
+    --darker-white: oklch(from var(--base-white) clamp(0, l - 0.22, 1) calc(c*0.9) h);
 }
 
 *,
