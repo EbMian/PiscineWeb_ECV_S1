@@ -195,6 +195,12 @@ main {
     max-width: 80ch;
 }
 
+.mugList, .bowlList, .cafeList, .teaList {
+    display: flex; 
+    overflow: auto; 
+    margin: 40px 0 40px 0;
+}
+
 .review {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -212,10 +218,29 @@ main {
 
 
 .mugList img {
-    width: 30vw;
-    height: 30vw;
+    width: 230px;
+    height: 180px; 
     object-fit: cover;
 }
+
+.bowlList img {
+    width: 230px;
+    height: 110px; 
+    object-fit: cover;
+}
+
+.cafeList img {
+    width: 230px;
+    height: 180px; 
+    object-fit: cover;
+}
+
+.teaList img {
+    width: 230px;
+    height: 180px; 
+    object-fit: cover;
+}
+
 
 .grid12Cols {
     display: grid;
