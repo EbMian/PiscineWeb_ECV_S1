@@ -12,7 +12,7 @@ const prixTotal = () => {
     return total;
 };
 
-const renderArticle = ({ color, finish, price, quantity, size }, id) =>
+const renderArticle = ({ color, finish, price, quantity, size, isGift }, id) =>
     `<div class="flex" style="gap: 1rem; align-items: center; width: 100%">
         <div id="cContainer${id}" style="width: 10rem; aspect-ratio: 1;">
             <canvas id="c${id}"></canvas>
@@ -23,6 +23,7 @@ const renderArticle = ({ color, finish, price, quantity, size }, id) =>
                 <li>Couleur : ${color}</li>
                 <li>Finition : ${finish}</li>
                 <li>Taille : ${size}</li>
+                <li>Emballage : ${isGift == 'true' ? 'Oui' : 'Non'}</li>
             </ul>
         </div>
         <h3 style="margin-left: auto;margin-top: .5rem">Prix : ${price} €</h3>

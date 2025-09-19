@@ -49,6 +49,7 @@ addToCartButton?.addEventListener('click', () => {
     const selectedSize = Storage.get('selectedSize');
     const selectedColor = Storage.get('selectedColor');
     const selectedFinish = Storage.get('selectedFinish');
+    const isGift = Storage.get('isGift');
     if (!selectedSize || !selectedColor || !selectedFinish) {
         alert('Veuillez sélectionner la taille, la couleur et la finition avant d\'ajouter au panier.');
         return;
@@ -59,6 +60,7 @@ addToCartButton?.addEventListener('click', () => {
         finish: selectedFinish,
         price: getPrice(),
         quantity: quantity,
+        isGift: isGift,
     });
     alert('Article ajouté au panier !');
 });

@@ -15,11 +15,13 @@ const Storage = {
 let selectedSize = Storage.get('selectedSize');
 let selectedColor = Storage.get('selectedColor');
 let selectedFinish = Storage.get('selectedFinish');
+let isGift = Storage.get('isGift');
 
 // Sélecteurs DOM
 const sizeSelectors = document.querySelectorAll('input[name="size-setting"]');
 const colorSelectors = document.querySelectorAll('input[name="color-setting"]');
 const finishSelectors = document.querySelectorAll('input[name="finish-setting"]');
+const giftCheckbox = document.querySelector('#gift-checkbox');
 
 function handleSelectionChange(type) {
     const selector = `input[name="${type}-setting"]:checked`;
@@ -31,7 +33,7 @@ function handleSelectionChange(type) {
         previewer.changeSize(value);
     }
     if (type === 'color') {
-        selectedColor = value;
+        selectedColor = value; true
         previewer.changeColor(value);
     }
     if (type === 'finish') {
@@ -42,13 +44,19 @@ function handleSelectionChange(type) {
     updatePriceElement();
 }
 
+function handleGiftChange() {
+    isGift = giftCheckbox.checked;
+    Storage.set('isGift', isGift);
+    updatePriceElement();
+}
+
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function updatePriceElement() {
     const priceElement = document.querySelector('#price');
-    if (priceElement) priceElement.innerText = `${getPrice(false)},00 €`;
+    if (priceElement) priceElement.innerText = `${getPrice()},00 €`;
 }
 
 function restoreSelections() {
@@ -64,11 +72,15 @@ function restoreSelections() {
         const el = document.querySelector(`input[name="finish-setting"][data-value="${selectedFinish}"]`);
         if (el) el.checked = true;
     }
+    if (isGift) {
+        giftCheckbox.checked = true;
+    }
 }
 
 export function getPrice() {
     let p = basePrice + options.size[selectedSize] + options.colors[selectedColor] + options.finish[selectedFinish];
     // if (customImage) p += options.image;
+    if (isGift) p += options.gift;
     return p;
 }
 
@@ -77,8 +89,10 @@ export function initSelectors() {
     sizeSelectors.forEach(selector => selector.addEventListener('change', () => handleSelectionChange('size')));
     colorSelectors.forEach(selector => selector.addEventListener('change', () => handleSelectionChange('color')));
     finishSelectors.forEach(selector => selector.addEventListener('change', () => handleSelectionChange('finish')));
+    giftCheckbox.addEventListener('change', () => handleGiftChange());
     // Mise à jour initiale du prix
     handleSelectionChange('size');
     handleSelectionChange('color');
     handleSelectionChange('finish');
+    handleGiftChange();
 }
