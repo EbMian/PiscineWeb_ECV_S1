@@ -4,7 +4,7 @@ Projet de personnalisation et d'achat de mugs en ligne
 
 ## Fonctionnalités principales
 - Prévisualisation 3D interactive du mug (Three.js)
-- Personnalisation du mug : taille, couleur, finition, image (Nice)
+- Personnalisation du mug : taille, couleur, finition, (wip : custom image)
 - Calcul dynamique du prix selon les options
 - Ajout au panier et gestion des quantités
 - Stockage des sélections et du panier (sessionStorage/localStorage)
