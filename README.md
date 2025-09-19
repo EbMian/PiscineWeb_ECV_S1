@@ -11,38 +11,38 @@ Projet de personnalisation et d'achat de mugs en ligne
 - Interface responsive et moderne
 
 ## Structure du projet
+
 ```
-index.html
-README.md
-assets/
-	icons/
-	images/
-models/
-	mug-cup/
-	plain-mug/
-components/
-	footer/
-	header/
-JS/
-	app.js
-	main.js
-	selector.js
-	addToCart.js
-	components/
-		OptionSelector.js
-		Previewer/Previewer.js
-	Routing/
-	services/
-pages/
-	accueil.html
-	panier.html
-	produit.html
-styles/
-	accueil.css
-	advice.css
-	main.css
-	panier.css
-	produit.css
+	```text
+	.
+	├── index.html
+	├── README.md
+	├── assets
+	│   ├── icons
+	│   ├── images
+	│ 	└── models
+	│   
+	├── JS
+	│   ├── addToCart.js
+	│   ├── Data.js
+	│   ├── main.js
+	│   ├── panier.js
+	│   ├── Previewer.js
+	│   ├── selector.js
+	│   ├── produit.js
+	│   └── OptionSelector.js
+	│   
+	├── pages
+	│   ├── panier.html
+	│   └── produit.html
+	│   
+	├── styles
+	│   ├── accueil.css
+	│   ├── advice.css
+	│   ├── main.css
+	│   ├── panier.css
+	│   └── produit.css
+	```
 ```
 
 ## Installation et lancement
