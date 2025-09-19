@@ -119,18 +119,13 @@ export class Previewer {
         }
     }
 
-
-
-    renderPreview(scale, color, roughness, interactive = true) {
+    renderPreview({ scale, color, roughness, interactive = true }) {
         this._scale = previewOptions.size[scale];
         this._color = previewOptions.colors[color];
         this._roughness = previewOptions.finish[roughness];
         this.interactive = interactive;
         this.loadMug();
     }
-
-
-
 
     makeRender() {
         if (this.interactive) {

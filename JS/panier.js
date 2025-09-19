@@ -1,4 +1,5 @@
 import { options } from './Data.js';
+import { Previewer } from './Previewer.js';
 
 const listElement = document.querySelector('#list');
 const totalPriceElement = document.querySelector('#total');
@@ -11,12 +12,14 @@ const prixTotal = () => {
     return total;
 };
 
-const renderArticle = ({ color, finish, price, quantity, size }) =>
-    `<div class="flex" style="gap: .5rem; align-items: center; width: 100%">
-        <img src="../assets/images/mug-blanc.png" alt="Mug blanc" style="width:100px">
+const renderArticle = ({ color, finish, price, quantity, size }, id) =>
+    `<div class="flex" style="gap: 1rem; align-items: center; width: 100%">
+        <div id="cContainer${id}" style="width: 10rem; aspect-ratio: 1;">
+            <canvas id="c${id}"></canvas>
+        </div>
         <div>
             <h2 style="font-weight: bold; margin-bottom:.5rem">Mug x${quantity}</h2>
-            <ul class="flex" style="gap: 2rem; margin-left: .5rem;">
+            <ul class="flex" style="gap: 2rem; margin-left: 1rem;">
                 <li>Couleur : ${color}</li>
                 <li>Finition : ${finish}</li>
                 <li>Taille : ${size}</li>
@@ -27,8 +30,19 @@ const renderArticle = ({ color, finish, price, quantity, size }) =>
     <hr style="width: 100%; margin: 1rem 0">`
     ;
 
-const html = articlesList.map(article => renderArticle(article)).join('');
+const html = articlesList.map((article, id) => renderArticle(article, id)).join('');
 
 listElement.innerHTML = html;
+
+articlesList.forEach(({ color, finish, size }, id) => {
+    const renderer = new Previewer({ canvasId: 'c' + id, containerId: 'cContainer' + id });
+    renderer.renderPreview({
+        scale: size,
+        color: color,
+        roughness: finish,
+        interactive: false
+    });
+});
+
 totalPriceElement.innerText = prixTotal() + " €";
 

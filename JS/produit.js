@@ -24,7 +24,6 @@ previewer.renderPreview({
     scale: Storage.get('selectedSize'),
     color: Storage.get('selectedColor'),
     roughness: Storage.get('selectedFinish'),
-    interactive: true
 });
 
 initSelectors();
