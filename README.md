@@ -11,9 +11,6 @@ Projet de personnalisation et d'achat de mugs en ligne
 - Interface responsive et moderne
 
 ## Structure du projet
-
-```
-	```text
 	.
 	├── index.html
 	├── README.md
@@ -42,8 +39,6 @@ Projet de personnalisation et d'achat de mugs en ligne
 	│   ├── main.css
 	│   ├── panier.css
 	│   └── produit.css
-	```
-```
 
 ## Installation et lancement
 1. Cloner le dépôt
