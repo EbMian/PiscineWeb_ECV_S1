@@ -14,7 +14,8 @@ Projet de personnalisation et d'achat de mugs en ligne
 	.
 	├── index.html
 	├── README.md
-	├── assets
+	│   
+ 	├── assets
 	│   ├── icons
 	│   ├── images
 	│ 	└── models
