@@ -33,12 +33,12 @@ Projet de personnalisation et d'achat de mugs en ligne
 	│   ├── panier.html
 	│   └── produit.html
 	│   
-	├── styles
-	│   ├── accueil.css
-	│   ├── advice.css
-	│   ├── main.css
-	│   ├── panier.css
-	│   └── produit.css
+	└── styles
+	   ├── accueil.css
+	   ├── advice.css
+	   ├── main.css
+	   ├── panier.css
+	   └── produit.css
 
 ## Installation et lancement
 1. Cloner le dépôt
